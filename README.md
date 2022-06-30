@@ -11,7 +11,7 @@ Contents Flowchart Program :
 5. Conclusion
 6. Recommendation
 
-Problem Understanding :
+**Problem Understanding :**
 
 Sebuah perusahaan e-commerce yang bergerak dalam bisnis jual beli barang secara online merupakan salah satu solusi dalam dunia digital yang mempermudah pelanggan dalam memenuhi kebutuhannya tanpa harus berkunjung secara langsung ke toko penjual. Online e-commerce menawarkan banyak kemudahan bagi pelanggan diantaranya pelanggan dapat membandingkan banyak produk sekaligus untuk mendapatkan produk dengan harga yang murah dan berkualitas, banyak tersedia berbagai macam barang dalam satu tampilan, menyediakan berbagai metode pembayaran dari pembayaran secara cash hingga cicil melalui kartu kredit atau financial partner, hingga terdapat banyak promo dari diskon hingga cashback yang ditawarkan kepada pelanggan. Dalam bisnis online e-commerce, pelanggan menjadi komponen penting dalam pendapatan perusahaan contohnya seperti pelanggan dapat memberikan pendapatan secara langsung ketika pelanggan tersebut melakukan transaksi melalui online platform perusahaan, atau tingkat keramaian atau trafic pelanggan dalam online platform perusahaan juga dapat menarik brand untuk bekerjasama ikut memasarkan produknya melalui online platform perusahaan. Oleh karena itu menjadi hal yang sangat penting untuk perusahaan agar dapat menjaga pelanggannya agar tetap setia / loyal tidak berpindah pada online platform perusahaan lain (Customer Churn). Kita dapat melihat pada kasus netflix yang merupakan online platform untuk menonton film, pada kuartal 1 tahun 2022 netflix kehilangan hingga 200.000 pelanggan yang tentunya dapat berpengaruh cukup signifikan terhadap pendapatan perusahaan.
 
@@ -22,29 +22,30 @@ Menurut Emmet C. Murphy dan Mark A. Murphy dalam buku Leading On The Edge of Cha
 Target :
 
 0 : Pelanggan tetap menggunakan E-commerce/Loyal
+
 1 : Pelanggan meninggalkan menggunakan E-commerce/Keluar
 
 
-Problem Statement :
+**Problem Statement :**
 
 Salah satu permasalahan yang penting dalam bisnis jual beli online adalah bagaimana perusahaan dapat menjaga konsumennya agar tetap loyal dan tidak pindah ke online platform perusahaan lain. Konsumen adalah aset utama perusahaan sehingga salah satu cara perusahaan mempertahankan konsumen yaitu dengan melakukan prediksi pelanggan churn. Dengan melalukan prediksi, perusahaan mampu mengidentifikasi pelanggan potensial (customer retention) sehingga perusahaan dapat menerapkan strategi pemasaran yang tepat seperti memberikan promo diskon atau cashback kepada pelanggan yang berpotensi churn sehingga dapat mencegah pelanggan tersebut menghentikan pembelian dan berpindah ke perusahaan pesaing (churn).
 
 Dengan adanya model prediksi pelanggan churn ini, perusahaan dapat meminimalkan kerugian akibat kehilangan sejumlah pelanggan karena perusahaan mampu mengidentifikasi pelanggan yang loyal dan tidak. Sehingga biaya yang keluar untuk menarik pelanggan baru dapat dihindari dengan mempertahankan pelanggan yang loyal dimana biaya untuk mempertahankan pelanggan yang sudah ada relatif lebih rendah dibanding dengan menarik pelanggan baru.
 
 
-Goals :
+**Goals :**
 
 Berdasarkan permasalahan tersebut, perusahaan harus memiliki tools yang dapat memprediksi pelanggan churn dan mengenali karakteristik pelanggan churn sehingga perusahaan dapat mengambil langkah - langkah antisipatif untuk menjaga pelanggan tersebut. Variabel - variabel yang berpengaruh dalam pelanggan churn diantaranya gender, tenure / masa lama pakai aplikasi, kemudahan dalam menggunakan aplikasi (user friendly), jumlah promo yang ada dalam aplikasi, jangka waktu pengiriman barang hingga respon dari customer service jika terdapat kendala selama bertransaksi.
 
 Tujuan pemodelan dengan memprediksi pelanggan churn adalah mengetahui karakteristik pelanggan churn berdasarkan metode klasifikasi. Pemodelan ini diharapkan mampu mengidentifikasi pelanggan churn dan tidak sehingga perusahaan mampu menerapkan strategi customer retention dan costumer churn yang tepat. Dan juga perusahaan dapat mengetahui variable kostumer loyal atau tidak terhadap layanan.
 
 
-Analytic Approach :
+**Analytic Approach :**
 
 Yang perlu dilakukan yaitu menganalisis karakteristik pelanggan yang loyal dan tidak sehingga data tersebut dapat diproses untuk membangun model. selanjutnya akan dibangun model klasifikasi yang mampu memprediksi pelanggan yang loyal atau tidak sehingga perusahaan dapat menerapkan strategi yang tepat terhadap customer retention dan costumer churn.
 
 
-Metric Evaluation :
+**Metric Evaluation :**
 
 True Positive (TP) : Pelanggan diprediksi churn, secara aktual memang churn
 
@@ -67,7 +68,7 @@ Kondisi dan dampak : Dimana dalam kondisi ini pelanggan yang diprediksi tidak ch
 Dari kedua tipe error tersebut, dengan menimbang dampak yang paling besar terhadap pendapatan perusahaan maka yang akan dilakukan adalah membuat model yang dapat menekan angka False Negative agar perusahaan tidak kehilangan pelanggan dan memiliki kesempatan dalam melakukan langkah-langkah perbaikan untuk improvement performance palayanannya. Jadi matriks utama yang akan ditingkatkan nilainya yaitu recall agar mencegah nilai false negative yang tinggi.
 
 
-Data Preprocessing :
+**Data Preprocessing :**
 
 Pada tahap ini, akan dilakukan cleaning pada data untuk kebutuhan proses analisis selanjutnya. Beberapa hal yang perlu dilakukan adalah:
 
@@ -82,18 +83,19 @@ Metode handling data outlier menggunakan metode mahalanobis distance. Mahalanobi
 Metode scaling yang akan digunakan yaitu robust scaler. Robust scaler merupakan metode scaling yang kuat dengan data yang memiliki banyak outlier. Robust Scaler menggunakan rentang inter quartile secara default (rentang antara q1 dan q3). Transformer dengan robust scaler hanya digunakan untuk model logistic regression yang tidak menggunakan basis tree dalam algoritmanya.
 
 
-Modeling and Evaluation :
+**Modeling and Evaluation :**
+
 Pada model and evaluation dibandingkan hasil performa model dengan menggunakan nilai recall sesuai dengan evaluasi metrics yang telah ditetapkan diawal dengan harapan mampu menekan sekecil mungkin nilai false negative dan mendapatkan nilai recall yang tinggi. Formula recall yaitu:
 
 Recall = (TP) / (TP + FN)
 
 Model yang akan dibandingkan yaitu terdapat 5 model yaitu:
-
 1. Logistic regression
 2. LightGBM
 3. Decision Tree
 4. Random Forest
 5. XGBoost
+
 Dari kelima model tersebut akan dipilih model terbaik yang memberikan nilai recall yang tinggi, stabil antara train dan testnya serta standar deviasi yang rendah.
 
 Berdasarkan hasil prediksi pada train dan test set, XGBoost memberikan performa yang paling baik dengan score recall yang lebih tinggi dibanding model yang lain. Jika dibandingkan hasil uji performa yang ada, model tanpa handling outlier memberikan performa akhir yang lebih baik untuk nilai recall pada test setnya namun model dengan handling outlier memberikan performa yang lebih stabil antara train dan testnya, sehingga akan diambil model dengan handling outlier dengan hasil berikut:
@@ -114,13 +116,15 @@ Selanjutnya dilakukan feature importance dengan hasil dapat meningkatkan perform
 4. Serta jika dilihat dari model sebelum di hyperparam tuning yang lebih baik, didapatkan nilai recall meningkat juga dari 94,4% menjadi 95,06% dan nilai FN menurun dari 9 menjadi 8.
 
 
-Conclusion :
+**Conclusion :**
+
 Berdasarkan hasil classification report dari model yang memberikan kinerja recall dan FN rate terbaik yaitu model setelah dilakukan handling imbalance menggunakan undersampling namun tanpa dilakukan hyperparameter tuning maupun feature importance. Dapat disimpulkan bahwa untuk model yang digunakan untuk memprediksi pelanggan mana saja yang berpotensi untuk Churn ke aplikasi perusahaan lain, model yang terpilih dapat mengurangi 95% kandidat pelanggan yang akan benar - benar Churn karena sebelum pelanggan tersebut churn perusahaan dapat memberikan treatment untuk mencegah pelanggan tersebut Churn. Hal ini sangat berdampak positif bagi perusahaan karena dengan begitu model dapat digunakan untuk menjaga sumber pendapatan perusahaan (pelanggan) dengan cukup akurat sehingga perusahaan dapat meminimalkan biaya yang keluar untuk mencari pelanggan baru dan biaya yang dapat digunakan untuk fokus pada pelanggan yang telah ada agar dapat meningkatkan transaksinya.
 
 Namun dari model didapatkan sejumlah FN sebanyak 8 pelanggan yang dapat berpotensi pada hilangnya pelanggan tersebut akibat Churn atau berpindah ke perusahaan lain. Untuk mengatasi hal tersebut perusahaan dapat melakukan langkah preventif kepada seluruh pelanggan tanpa memperhatikan hasil prediksi churn atau tidaknya terlebih dahulu dengan memperhatikan feature importance dari data. Seperti perusahaan dapat memberikan fokusnya kepada pelanggan dengan Tenure < 2 bulan dimana pada periode ini merupakan waktu kritis pelanggan banyak Churn. Bisa jadi memang selama ini perusahaan kurang memberikan perhatian untuk pelanggan dengan jangka waktu tersebut seperti hanya memberikan promo yang menarik untuk pelanggan baru yang pertama kali transaksi dan selanjutnya pelanggan baru akan mendapat promo yang menarik kembali setelah berlangganan dan bertransaksi cukup banyak terlebih dahulu.
 
 
-Recommendation:
+**Recommendation:**
+
 Hal-hal yang dapat dilakukan untuk mengembangkan model agar lebih baik lagi, seperti:
 1. Melakukan pengecekan dan pengelompokkan atas fitur - fitur mana saja yang memberikan error yang tinggi terhadap target Churn sehingga kita dapat melakukan feature engineering yang lebih baik terlebih dahulu terhadap fitur tersebut agar dapat meningkatkan performa model.
 2. Melakukan penambahan data dari yang ada saat ini sejumlah sekitar 5000 menjadi lebih banyak. Sehingga model mendapatkan banyak refrensi data yang dipelajari. Penambahan data dapat dilakukan dengan melakukan update data terbaru atau memperbaiki data mentah yang terdapat missing value dengan nilai sebenarnya.
