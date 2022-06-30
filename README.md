@@ -22,7 +22,6 @@ Menurut Emmet C. Murphy dan Mark A. Murphy dalam buku Leading On The Edge of Cha
 Target :
 
 0 : Pelanggan tetap menggunakan E-commerce/Loyal
-
 1 : Pelanggan meninggalkan menggunakan E-commerce/Keluar
 
 
