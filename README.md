@@ -12,6 +12,7 @@ Contents Flowchart Program :
 6. Recommendation
 
 Problem Understanding :
+
 Sebuah perusahaan e-commerce yang bergerak dalam bisnis jual beli barang secara online merupakan salah satu solusi dalam dunia digital yang mempermudah pelanggan dalam memenuhi kebutuhannya tanpa harus berkunjung secara langsung ke toko penjual. Online e-commerce menawarkan banyak kemudahan bagi pelanggan diantaranya pelanggan dapat membandingkan banyak produk sekaligus untuk mendapatkan produk dengan harga yang murah dan berkualitas, banyak tersedia berbagai macam barang dalam satu tampilan, menyediakan berbagai metode pembayaran dari pembayaran secara cash hingga cicil melalui kartu kredit atau financial partner, hingga terdapat banyak promo dari diskon hingga cashback yang ditawarkan kepada pelanggan. Dalam bisnis online e-commerce, pelanggan menjadi komponen penting dalam pendapatan perusahaan contohnya seperti pelanggan dapat memberikan pendapatan secara langsung ketika pelanggan tersebut melakukan transaksi melalui online platform perusahaan, atau tingkat keramaian atau trafic pelanggan dalam online platform perusahaan juga dapat menarik brand untuk bekerjasama ikut memasarkan produknya melalui online platform perusahaan. Oleh karena itu menjadi hal yang sangat penting untuk perusahaan agar dapat menjaga pelanggannya agar tetap setia / loyal tidak berpindah pada online platform perusahaan lain (Customer Churn). Kita dapat melihat pada kasus netflix yang merupakan online platform untuk menonton film, pada kuartal 1 tahun 2022 netflix kehilangan hingga 200.000 pelanggan yang tentunya dapat berpengaruh cukup signifikan terhadap pendapatan perusahaan.
 
 Customer Churn atau yang dikenal juga dengan pindahnya pelanggan adalah pemutusan jasa suatu perusahaan oleh pelanggan karena pelanggan tersebut memilih menggunakan jasa layanan lain (Masarifoglu & Buyuklu, 2019). Dengan memprediksi churn perusahaan dapat mengidentifikasi churn lebih awal sehingga kerugian perusahaan akibat konsumen yang pindah dapat dihindari. Konsumen adalah aset utama perusahaan sehingga salah satu cara perusahaan mempertahankan konsumen adalah dengan mengenali pelanggan potensial dan harus mampu mempertahankan pelanggan potensial (customer retention) sehingga dapat mencegah pelanggan menghentikan pembelian dan berpindah ke perusahaan pesaing (churn).
@@ -19,46 +20,60 @@ Customer Churn atau yang dikenal juga dengan pindahnya pelanggan adalah pemutusa
 Menurut Emmet C. Murphy dan Mark A. Murphy dalam buku Leading On The Edge of Chaos bahwa memperoleh pelanggan baru menghabiskan biaya lima kali lipat dari biaya untuk memuaskan dan mempertahankan pelanggan lama, sementara itu peningkatan sebanyak 2% dalam mempertahankan pelanggan (customer retention) punya dampak terhadap laba seperti memangkas biaya sebesar 10%. Dengan menerapkan churn prediction, perusahaan dapat melakukan identifikasi pelanggan churn dan menerapkan strategi pemasaran yang tepat terhadap pelanggan – pelanggan lama dengan harapan dapat meningkatkan pendapatan perusahaan.
 
 Target :
+
 0 : Pelanggan tetap menggunakan E-commerce/Loyal
+
 1 : Pelanggan meninggalkan menggunakan E-commerce/Keluar
 
 
 Problem Statement :
+
 Salah satu permasalahan yang penting dalam bisnis jual beli online adalah bagaimana perusahaan dapat menjaga konsumennya agar tetap loyal dan tidak pindah ke online platform perusahaan lain. Konsumen adalah aset utama perusahaan sehingga salah satu cara perusahaan mempertahankan konsumen yaitu dengan melakukan prediksi pelanggan churn. Dengan melalukan prediksi, perusahaan mampu mengidentifikasi pelanggan potensial (customer retention) sehingga perusahaan dapat menerapkan strategi pemasaran yang tepat seperti memberikan promo diskon atau cashback kepada pelanggan yang berpotensi churn sehingga dapat mencegah pelanggan tersebut menghentikan pembelian dan berpindah ke perusahaan pesaing (churn).
 
 Dengan adanya model prediksi pelanggan churn ini, perusahaan dapat meminimalkan kerugian akibat kehilangan sejumlah pelanggan karena perusahaan mampu mengidentifikasi pelanggan yang loyal dan tidak. Sehingga biaya yang keluar untuk menarik pelanggan baru dapat dihindari dengan mempertahankan pelanggan yang loyal dimana biaya untuk mempertahankan pelanggan yang sudah ada relatif lebih rendah dibanding dengan menarik pelanggan baru.
 
 
 Goals :
+
 Berdasarkan permasalahan tersebut, perusahaan harus memiliki tools yang dapat memprediksi pelanggan churn dan mengenali karakteristik pelanggan churn sehingga perusahaan dapat mengambil langkah - langkah antisipatif untuk menjaga pelanggan tersebut. Variabel - variabel yang berpengaruh dalam pelanggan churn diantaranya gender, tenure / masa lama pakai aplikasi, kemudahan dalam menggunakan aplikasi (user friendly), jumlah promo yang ada dalam aplikasi, jangka waktu pengiriman barang hingga respon dari customer service jika terdapat kendala selama bertransaksi.
 
 Tujuan pemodelan dengan memprediksi pelanggan churn adalah mengetahui karakteristik pelanggan churn berdasarkan metode klasifikasi. Pemodelan ini diharapkan mampu mengidentifikasi pelanggan churn dan tidak sehingga perusahaan mampu menerapkan strategi customer retention dan costumer churn yang tepat. Dan juga perusahaan dapat mengetahui variable kostumer loyal atau tidak terhadap layanan.
 
 
 Analytic Approach :
+
 Yang perlu dilakukan yaitu menganalisis karakteristik pelanggan yang loyal dan tidak sehingga data tersebut dapat diproses untuk membangun model. selanjutnya akan dibangun model klasifikasi yang mampu memprediksi pelanggan yang loyal atau tidak sehingga perusahaan dapat menerapkan strategi yang tepat terhadap customer retention dan costumer churn.
 
 
 Metric Evaluation :
+
 True Positive (TP) : Pelanggan diprediksi churn, secara aktual memang churn
+
 True Negative (TN) : Pelanggan diprediksi tidak churn, secara aktual memang tidak churn
+
 False Positive (FP) : Pelanggan diprediksi churn, tapi secara aktual tidak churn
+
 False Negative (FN) : Pelanggan diprediksi tidak churn, tapi secara aktual churn
 
 Berdasarkan klasifikasi confusion matrix diatas, dapat diklasifikasikan 2 tipe error yang dimungkinkan terjadi yaitu:
 
 Type 1 error : False Positive
+
 Kondisi dan dampak : Dimana dalam kondisi ini pelanggan yang diprediksi churn oleh model, namun secara aktual / sebenarnya pelanggan tersebut tidak churn. Kegagalan prediksi pada kondisi ini tidak akan menyebabkan perusahaan kehilangan pelanggan karena pelanggan yang dipresdiksi salah tetap akan menggunakan online platform perusahaan. Untuk dampak atas langkah perusahaan dalam mengantisipasi pelanggan churn seperti pemberian promo kepada pelanggan justru terdapat potensi peningkatan aktifitas transaksi oleh pelanggan tersebut dan untuk karakteristik pelanggannya tetap dapat digunakan untuk improvement performance pelayanan.
 
 Type 2 error : False Negative
+
 Kondisi dan dampak : Dimana dalam kondisi ini pelanggan yang diprediksi tidak churn oleh model, namun secara aktual / sebenarnya pelanggan tersebut churn. Kegagalan prediksi pada kondisi ini menyebabkan perusahaan kehilangan pelanggan tanpa tau alasan dan tanpa langkah antisipatif untuk menjaga pelanggan tersebut. Dengan hilangnya seketika sejumlah pelanggan tersebut, terdapat 2 kerugian yang sangat penting untuk perusahaan yaitu perusahaan kehilangan pendapatan langsung dari pelanggan, dan perusahaan kehilangan kesempatan untuk memetakan langkah-langkah perbaikan agar pelanggan tidak churn.
 
 Dari kedua tipe error tersebut, dengan menimbang dampak yang paling besar terhadap pendapatan perusahaan maka yang akan dilakukan adalah membuat model yang dapat menekan angka False Negative agar perusahaan tidak kehilangan pelanggan dan memiliki kesempatan dalam melakukan langkah-langkah perbaikan untuk improvement performance palayanannya. Jadi matriks utama yang akan ditingkatkan nilainya yaitu recall agar mencegah nilai false negative yang tinggi.
 
 
 Data Preprocessing :
+
 Pada tahap ini, akan dilakukan cleaning pada data untuk kebutuhan proses analisis selanjutnya. Beberapa hal yang perlu dilakukan adalah:
+
 1. Melakukan pengecekan terhadap duplikat data, missing value, dan drop fitur yang tidak memiliki relevansi terhadap permasalahan yang sedang dihadapi.
+
 2. Melakukan treatment terhadap missing value jika ada. Hal ini dilakukan dengan cara men-drop fiturnya jika memang tidak dibutuhkan, mendrop data duplikat, menyatukan fitur yang memiliki kemiripan nama, mengganti nama data menjadi nama yang lebih umum dipakai dan mengimputasi dengan nilai yang paling masuk akal berdasarkan kasusnya.
 
 Metode missing value yang digunakan yaitu simple imputer dengan nilai median untuk fitur yang memiliki rentang antara nilai min dan maxnya kecil, sedangkan iterative imputer digunakan untuk fitur yang memiliki keterkaitan cukup tinggi dengan fitur lainnya dan memiliki rentang antara nilai min dan max yang besar.
@@ -74,6 +89,7 @@ Pada model and evaluation dibandingkan hasil performa model dengan menggunakan n
 Recall = (TP) / (TP + FN)
 
 Model yang akan dibandingkan yaitu terdapat 5 model yaitu:
+
 1. Logistic regression
 2. LightGBM
 3. Decision Tree
